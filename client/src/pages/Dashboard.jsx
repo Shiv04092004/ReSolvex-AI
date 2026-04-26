@@ -39,11 +39,11 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             {/* Welcome Header */}
-            <header style={{ marginBottom: '3rem' }}>
+            <header style={{ marginBottom: '2rem' }}>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', fontWeight: '600', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                     Welcome back
                 </p>
-                <h1 className="text-gradient" style={{ fontSize: '2.8rem', fontWeight: '900', marginBottom: '0.5rem' }}>
+                <h1 className="text-gradient" style={{ fontSize: '2.5rem', fontWeight: '900', marginBottom: '0.5rem' }}>
                     {userInfo?.name || 'Operator'}
                 </h1>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
@@ -52,13 +52,13 @@ const Dashboard = () => {
             </header>
 
             {/* Stat Cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
+            <div className="grid-3" style={{ marginBottom: '2.5rem' }}>
                 {statCards.map((card, i) => (
                     <div key={i} className="prism-card" style={{ background: card.gradient, borderLeft: `3px solid ${card.color}` }}>
                         <p style={{ color: 'var(--text-muted)', fontSize: '0.7rem', fontWeight: '700', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1rem' }}>
                             {card.label}
                         </p>
-                        <h2 style={{ fontSize: '3rem', fontWeight: '900', color: card.color, lineHeight: 1 }}>
+                        <h2 style={{ fontSize: '2.5rem', fontWeight: '900', color: card.color, lineHeight: 1 }}>
                             {card.value}
                         </h2>
                     </div>
@@ -66,7 +66,7 @@ const Dashboard = () => {
             </div>
 
             {/* Charts */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="grid-2">
                 <div className="prism-card" style={{ height: '400px' }}>
                     <h3 style={{ marginBottom: '1.5rem', fontSize: '0.8rem', color: 'var(--text-secondary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                         Trend Analysis

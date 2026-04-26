@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ onToggleSidebar }) => {
     const navigate = useNavigate();
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
@@ -12,6 +12,9 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
+            <button className="menu-toggle" onClick={onToggleSidebar}>
+                ☰
+            </button>
             <h1>ResolveX.AI</h1>
             
             <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -24,7 +27,7 @@ const Navbar = () => {
                     }}>
                         {userInfo?.name?.charAt(0)?.toUpperCase()}
                     </div>
-                    <div>
+                    <div className="user-badge-text">
                         <p style={{ fontSize: '0.8rem', fontWeight: '700', color: '#f1f5f9', lineHeight: 1.2 }}>{userInfo?.name}</p>
                         <p style={{ fontSize: '0.6rem', color: '#64748b', fontWeight: '500' }}>
                             {userInfo?.role === 'admin' ? 'Administrator' : 'Standard'}

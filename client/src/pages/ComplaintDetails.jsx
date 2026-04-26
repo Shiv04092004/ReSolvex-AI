@@ -146,7 +146,7 @@ const ComplaintDetails = () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
     return (
-        <div className="dashboard" style={{ padding: '2.5rem 3rem' }}>
+        <div className="dashboard">
             <div style={{ display: 'flex', gap: '0.8rem', marginBottom: '2rem' }}>
                 <button 
                     onClick={() => navigate('/my-complaints')} 
@@ -172,9 +172,9 @@ const ComplaintDetails = () => {
                 )}
             </div>
 
-            <div className="prism-card" style={{ maxWidth: '1000px', padding: '3rem' }}>
+            <div className="prism-card" style={{ padding: '2rem' }}>
                 <header style={{ marginBottom: '2.5rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '2rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
                         <span style={{ fontSize: '0.65rem', fontWeight: '700', color: '#818cf8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                             {complaint?.aiAnalysis?.category || 'General'}
                         </span>
@@ -189,7 +189,7 @@ const ComplaintDetails = () => {
                             <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)' }}>ID: {complaint._id}</span>
                         </div>
                     </div>
-                    <h1 className="text-gradient" style={{ fontSize: '2rem', fontWeight: '800' }}>{complaint.title}</h1>
+                    <h1 className="text-gradient" style={{ fontSize: '1.8rem', fontWeight: '800' }}>{complaint.title}</h1>
                 </header>
 
                 <section style={{ marginBottom: '2.5rem' }}>
@@ -218,14 +218,14 @@ const ComplaintDetails = () => {
                     </div>
                 )}
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', borderTop: '1px solid var(--glass-border)', paddingTop: '2rem' }}>
+                <div className="grid-2" style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '2rem' }}>
                     <div style={{ padding: '1.5rem', background: 'rgba(129,140,248,0.06)', border: '1px solid rgba(129,140,248,0.12)', borderRadius: '12px' }}>
                         <h4 style={{ color: '#818cf8', fontSize: '0.7rem', marginBottom: '0.8rem', fontWeight: '700', letterSpacing: '0.05em' }}>🧠 AI Suggested Fix</h4>
                         <p style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>{complaint?.aiAnalysis?.suggestedFix}</p>
                     </div>
                     <div style={{ padding: '1.5rem', background: 'rgba(251,113,133,0.06)', border: '1px solid rgba(251,113,133,0.12)', borderRadius: '12px', textAlign: 'center' }}>
                         <h4 style={{ color: '#fb7185', fontSize: '0.7rem', marginBottom: '0.8rem', fontWeight: '700', letterSpacing: '0.05em' }}>⚡ Priority Level</h4>
-                        <p style={{ fontSize: '2rem', fontWeight: '900', color: '#fb7185' }}>{complaint?.aiAnalysis?.priority?.toUpperCase()}</p>
+                        <p style={{ fontSize: '1.8rem', fontWeight: '900', color: '#fb7185' }}>{complaint?.aiAnalysis?.priority?.toUpperCase()}</p>
                     </div>
                 </div>
             </div>

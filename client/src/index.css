@@ -368,3 +368,98 @@ h1, h2, h3 {
 .prism-card:hover::before {
   opacity: 1;
 }
+
+/* ═══ Responsive Grid Utilities ═══ */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ═══ Hamburger Menu Button ═══ */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+/* ═══ Media Queries ═══ */
+@media (max-width: 1024px) {
+  .sidebar {
+    flex: 0 0 200px;
+  }
+  
+  .dashboard, .submit-complaint, .my-complaints {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 70px;
+    left: -260px;
+    width: 260px;
+    height: calc(100vh - 70px);
+    z-index: 90;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(12, 10, 26, 0.95);
+    backdrop-filter: blur(20px);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .page-container {
+    padding-bottom: 2rem;
+  }
+
+  .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .navbar h1 {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
+
+  .user-badge-text {
+    display: none;
+  }
+
+  .dashboard, .submit-complaint, .my-complaints {
+    padding: 1.5rem;
+  }
+
+  .prism-box {
+    padding: 2rem;
+  }
+
+  .text-gradient {
+    font-size: 2rem !important;
+  }
+}

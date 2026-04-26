@@ -9,12 +9,16 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import MeshBackground from './components/ParticleBackground';
 
+import { useState } from 'react';
+
 const ProtectedLayout = ({ children }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
       <div className="main-content">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
         <div className="page-container">
           {children}
         </div>

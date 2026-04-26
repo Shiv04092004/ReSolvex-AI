@@ -43,9 +43,9 @@ const SubmitComplaint = () => {
     };
 
     return (
-        <div className="submit-complaint" style={{ display: 'flex', justifyContent: 'center', paddingTop: '2rem' }}>
-            <div className="prism-box" style={{ maxWidth: '800px', width: '100%' }}>
-                <div style={{ marginBottom: '2.5rem' }}>
+        <div className="submit-complaint">
+            <div className="prism-box" style={{ width: '100%' }}>
+                <div style={{ marginBottom: '2rem' }}>
                     <h2 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Submit New Report</h2>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Describe the incident and our AI will analyze it automatically</p>
                 </div>

@@ -99,7 +99,7 @@ const MyComplaints = () => {
                         className="prism-input"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        style={{ width: '300px', padding: '0.7rem 1rem', fontSize: '0.8rem' }}
+                        style={{ maxWidth: '300px', width: '100%', padding: '0.7rem 1rem', fontSize: '0.8rem' }}
                     />
                 </div>
             </header>
@@ -107,7 +107,7 @@ const MyComplaints = () => {
             {loading ? (
                 <p className="text-gradient" style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>Loading reports...</p>
             ) : (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: '1.5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))', gap: '1.5rem' }}>
                     {filteredComplaints.length === 0 ? (
                         <div className="prism-card" style={{ textAlign: 'center', gridColumn: '1 / -1', padding: '4rem' }}>
                             <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>
