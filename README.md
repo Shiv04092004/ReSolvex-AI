@@ -74,4 +74,51 @@ ResolveX AI is a next-generation, AI-powered incident management and complaint r
 ## 🛠️ Tech Stack
 * **Frontend**: React (Vite), React Router, Axios, Recharts, html2pdf.js
 * **Backend**: Node.js, Express, MongoDB, Mongoose, JSON Web Tokens (JWT), Bcrypt.js
-* **Styling**: Vanilla CSS with custom CSS variables and glassmorphism techniques.
+* **Styling**: Vanilla CSS with custom CSS variables, Glassmorphism, and Mobile-Responsive design.
+
+---
+
+## 🔒 Admin Access
+To manage the platform and view all reports, you must register as an Administrator. This requires a secure **Admin Secret Key**.
+
+> [!IMPORTANT]
+> **Default Admin Secret Key:** `RESOLVEX-ADMIN-2026`
+> 
+> Use this key during registration to gain administrative privileges. This key is also configurable via the `ADMIN_SECRET` variable in the server's `.env` file.
+
+---
+
+## 📱 Mobile Responsiveness
+ResolveX AI is fully optimized for mobile devices.
+- **Responsive Grid System**: Layouts automatically transition from multi-column grids to stacked views on smaller screens.
+- **Mobile Navigation**: Includes a touch-friendly hamburger menu for easy access to all dashboard features.
+- **Optimized UI**: Charts, cards, and forms are scaled for maximum readability on mobile browsers.
+
+---
+
+## 📂 Project Architecture
+
+### **Frontend (`/client`)**
+- `src/components`: Reusable UI elements like Sidebar, Navbar, and Complaint Cards.
+- `src/pages`: Main application views (Dashboard, Submit Report, My Reports, etc.).
+- `src/services`: Logic for API communication.
+- `src/index.css`: Centralized design system with custom variables and animations.
+
+### **Backend (`/server`)**
+- `models/`: Mongoose schemas for Users and Complaints.
+- `controllers/`: Business logic for authentication and report management.
+- `routes/`: Express API endpoints.
+- `utils/`: AI Neural Engine and file upload utilities.
+
+---
+
+## 🌐 Deployment
+The project is designed to be easily deployed on platforms like **Render**, **Vercel**, or **Heroku**.
+1. **GitHub Integration**: Connect your repository to Render.
+2. **Environment Variables**: Add your `MONGO_URI`, `JWT_SECRET`, and `ADMIN_SECRET` to the production environment settings.
+3. **Auto-Deploy**: Changes pushed to the `main` branch will automatically trigger a redeploy.
+
+---
+
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
